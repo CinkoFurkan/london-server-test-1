@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-4i=h7ne-coz44)3ceiry)khu)ht$oq!q)v=h%yv8vw21+-3r=b"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["ali-baba-test-1.onrender.com", "localhost", "127.0.0.1:8000/"]
 
