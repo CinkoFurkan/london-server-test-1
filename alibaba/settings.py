@@ -15,10 +15,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["ali-baba-test-1.onrender.com", "localhost", "127.0.0.1"]
 
-# Add this to your settings.py
-DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -110,6 +106,10 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"  # Directory for static files during production
 
+# Define MEDIA_ROOT and MEDIA_URL before using them
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # WhiteNoise settings for compression and caching
 STORAGES = {
     'default': {
@@ -120,10 +120,6 @@ STORAGES = {
         'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',  # For static file compression and caching
     },
 }
-
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
