@@ -112,10 +112,15 @@ STATIC_ROOT = BASE_DIR / "staticfiles"  # Directory for static files during prod
 
 # WhiteNoise settings for compression and caching
 STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",  # Compression and caching
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',  # Add this line for media storage
+        'LOCATION': MEDIA_ROOT,
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',  # For static file compression and caching
     },
 }
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
