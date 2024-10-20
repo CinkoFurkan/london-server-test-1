@@ -39,6 +39,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -47,7 +48,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",  # Optional: Tracks broken links
-    "whitenoise.middleware.WhiteNoiseMiddleware",  # Add WhiteNoise middleware
 ]
 
 ROOT_URLCONF = "alibaba.urls"
@@ -113,11 +113,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # WhiteNoise settings for compression and caching
 STORAGES = {
     'default': {
-        'BACKEND': 'django.core.files.storage.FileSystemStorage',  # Add this line for media storage
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',  
         'LOCATION': MEDIA_ROOT,
     },
     'staticfiles': {
-        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',  # For static file compression and caching
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage', 
     },
 }
 
