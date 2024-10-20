@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: my-app
+    name: ali_baba_test-1
     env: python
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
     startCommand: "gunicorn --bind 0.0.0.0:8000 alibaba.wsgi:application --workers=3"
