@@ -6,3 +6,6 @@ pip install pytz
 pip install Pillow 
 
 git reset --hard origin/main
+
+whitenoise==6.7.0
+gunicorn==23.0.0
