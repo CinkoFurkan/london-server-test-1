@@ -15,6 +15,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["ali-baba-test-1.onrender.com", "localhost", "127.0.0.1"]
 
+# Add this to your settings.py
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
+
 # Application definition
 
 INSTALLED_APPS = [
